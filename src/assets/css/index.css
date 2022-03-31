@@ -1,0 +1,148 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+body {
+  font-family: 'Space Mono', monospace;
+}
+
+p, a {
+  font-size: 0.813rem;
+}
+
+/* header */
+header, .mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header {
+  justify-content: space-between;
+  margin: 1.938rem 1.5rem 2.25rem 1.5rem;
+}
+
+header h1 {
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.mode {
+  gap: 1rem;
+}
+
+.mode p {
+  font-weight: 700;
+}
+
+/* search bar */
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.438rem;
+  height: 3.75rem;
+  margin: 0 1.5rem 1rem 1.5rem;
+  border: 1px solid grey;
+  border-radius: 15px;
+  padding-left: 1rem;
+  padding-right: 0.438rem;
+}
+
+.search input {
+  min-width: 11.5rem;
+  min-height: 1.563rem;
+}
+
+.search button {
+  width: 5.25rem;
+  height: 2.875rem;
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+/* profile card section */
+.profile--card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 1.5rem 1rem 1.5rem;
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
+.person--details {
+  display: grid;
+  grid: repeat(2, auto) / 4.375rem auto;
+}
+
+.person--details img {
+  width: 4.375rem;
+}
+
+.text--details {
+  margin: .45rem 0 0 1.188rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text--details h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.text--details h4 {
+  margin-bottom: 9px;
+}
+
+.person--details p {
+  grid-area: 2/1/-1/-1;
+}
+
+.person--bio {
+  margin-top: 2.063rem;
+}
+
+/* stats section */
+.person--stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  height: 5.313rem;
+  border: 1px solid grey;
+  border-radius: 15px;
+}
+
+.person--stats--text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+}
+
+.person--stats--text p {
+  font-size: 0.688rem;
+}
+
+.person--stats--text span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* location and social links section */
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.social--items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.203rem;
+}
