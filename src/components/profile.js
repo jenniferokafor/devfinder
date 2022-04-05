@@ -1,4 +1,5 @@
 import {ReactComponent as Glass} from '../assets/icons/search.svg';
+import { StyledPersonDetails, StyledPersonStats, StyledProfileCard, StyledSearch, StyledSocial } from './styles/Profile.styled';
 import profileImg from '../assets/icons/Bitmap.png';
 import pin from '../assets/icons/003-pin.svg';
 import urlIcon from '../assets/icons/002-url.svg';
@@ -11,17 +12,18 @@ export default function Profile () {
 
             {/* search bar for users to input their Github username */}
             
-            <div className='search'>
+            <StyledSearch>
                 <Glass />
-                <input type='text' id='username' name='username' className='username' placeholder='Search Github username...' />
+                <input type='text' id='username' name='username' placeholder='Search Github username...' />
+                <p>No results</p>
                 <button type='button'>Search</button>
-            </div>
+            </StyledSearch>
 
             {/* card section with user details */}
 
-            <div className='profile--card'>
+            <StyledProfileCard>
 
-                <div className='person--details'>
+                <StyledPersonDetails>
                     <img src={profileImg} alt="user's profile picture" />
 
                     <div className='text--details'>
@@ -33,19 +35,19 @@ export default function Profile () {
                     <p className='person--bio'>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                     </p>
-                </div>
+                </StyledPersonDetails>
 
                 {/* showing stats on their account */}
 
-                <div className='person--stats'>
+                <StyledPersonStats>
                     <div className='person--stats--text'><p>Repos</p><span>8</span></div>
                     <div className='person--stats--text'><p>Followers</p><span>3938</span></div>
                     <div className='person--stats--text'><p>Following</p><span>9</span></div>
-                </div>
+                </StyledPersonStats>
 
                 {/* social icons */}
 
-                <div className='social'>
+                <StyledSocial>
                     <div className='social--items'>
                         <img src={pin} alt='location icon'/>
                         <p>San Francisco</p>
@@ -65,10 +67,10 @@ export default function Profile () {
                         <img src={office} alt='place of work icon'/>
                         <p>@github</p>
                     </div>
-                </div>
+                </StyledSocial>
 
-            </div>
+            </StyledProfileCard>
 
         </div>
     )
-}
+} 
