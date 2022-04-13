@@ -26,13 +26,13 @@ export default function Profile () {
                 <StyledPersonDetails>
                     <img src={profileImg} alt="user's profile picture" />
 
-                    <div className='text--details'>
+                    <div>
                         <h3>The Octocat</h3>
                         <h4>@octocat</h4>
                         <p>Joined 25 Jan 2011</p>
                     </div>
 
-                    <p className='person--bio'>
+                    <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
                     </p>
                 </StyledPersonDetails>
@@ -40,30 +40,30 @@ export default function Profile () {
                 {/* showing stats on their account */}
 
                 <StyledPersonStats>
-                    <div className='person--stats--text'><p>Repos</p><span>8</span></div>
-                    <div className='person--stats--text'><p>Followers</p><span>3938</span></div>
-                    <div className='person--stats--text'><p>Following</p><span>9</span></div>
+                    <div><p>Repos</p><span>8</span></div>
+                    <div><p>Followers</p><span>3938</span></div>
+                    <div><p>Following</p><span>9</span></div>
                 </StyledPersonStats>
 
                 {/* social icons */}
 
                 <StyledSocial>
-                    <div className='social--items'>
+                    <div>
                         <img src={pin} alt='location icon'/>
                         <p>San Francisco</p>
                     </div>
 
-                    <div className='social--items'>
+                    <div>
                         <img src={urlIcon} alt='link icon'/>
                         <a href='#'>https://github.blog</a>
                     </div>
 
-                    <div className='social--items'>
+                    <div>
                         <img src={twitter} alt='twitter icon'/>
                         <p>Not Available</p>
                     </div>
 
-                    <div className='social--items'>
+                    <div>
                         <img src={office} alt='place of work icon'/>
                         <p>@github</p>
                     </div>

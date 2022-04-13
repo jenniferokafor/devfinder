@@ -11,7 +11,7 @@ export const StyledSearch = styled.div`
     padding-left: 1rem;
     padding-right: 0.438rem;
     background-color: ${({theme}) => theme.cardClr};
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    box-shadow: ${({theme}) =>theme.shadow};
     max-width: 20.438rem;
 
     @media (min-width: 46rem) {
@@ -30,10 +30,23 @@ export const StyledSearch = styled.div`
         min-height: 1.563rem;
         font-family: 'Space Mono', monospace;
         border: none;
+        background-color: ${({theme}) => theme.cardClr};
+        color: ${({theme}) => theme.txtClr1};
         caret-color: ${({theme}) => theme.btnTxtClr};
+
+        &::placeholder {
+            color: ${({theme}) => theme.txtClr1};
+        }
 
         &:focus {
             outline: none;
+        }
+
+        @media screen and (min-width: 64rem) {
+            &, &::placeholder {
+                min-width: 17rem;
+                font-size: 1.125rem;
+            }
         }
     }
 
@@ -67,7 +80,7 @@ export const StyledProfileCard = styled.div`
     margin: 0 1.5rem 1rem 1.5rem;
     padding: 2rem 1.5rem 3rem 1.5rem;
     background-color: ${({theme}) => theme.cardClr};
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    box-shadow: ${({theme}) =>theme.shadow};
     border-radius: 15px;
     max-width: 19rem;
 
@@ -85,6 +98,7 @@ export const StyledPersonDetails = styled.div`
     display: grid;
     grid: repeat(2, auto) / 4.375rem auto;
     color: ${({theme}) => theme.txtClr1};
+    position: relative;
 
     img {
         width: 4.375rem;
@@ -100,27 +114,37 @@ export const StyledPersonDetails = styled.div`
         display: flex;
         flex-direction: column;
 
-        h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: ${({theme}) => theme.txtClr2};
-        }
-
-        h4 {
-            margin-bottom: 9px;
-            color: ${({theme}) => theme.btnTxtClr};
-        }
-
         @media (min-width: 64rem) {
             margin-left: -70px;
             margin-bottom: 1rem;
         }
 
+        h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: ${({theme}) => theme.txtClr2};
+
+            @media (min-width: 64rem) {
+                font-size: 1.625rem;
+            }
+        }
+
+        h4 {
+            font-size: 0.813rem;
+            margin-bottom: 9px;
+            color: ${({theme}) => theme.btnTxtClr};
+
+            @media (min-width: 64rem) {
+                font-size: 1rem;
+            }
+        }
+
         p {
             @media (min-width: 64rem) {
                 position: absolute;
-                right: 195px;
+                right: 10px;
+                font-size: 0.938rem;
             }
         }
     }
@@ -184,6 +208,10 @@ export const StyledSocial = styled.div`
         a {
             text-decoration: none;
             color: ${({theme}) => theme.txtClr1};
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         &:nth-child(3) {

@@ -7,4 +7,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     
+    @media screen and (min-width: 64rem) {
+        padding-top: 10vh;
+    }
 `

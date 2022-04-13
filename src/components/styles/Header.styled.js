@@ -16,25 +16,24 @@ export const StyledHeader = styled.header`
 
     }
 
-    div {
+    h1 {
+        font-size: 1.625rem;
+        font-weight: 700;
+        margin-right: auto;
+        color: ${({theme}) => theme.txtClr2};
+    }
+`
+
+export const StyledToggleBar = styled.div`
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 1rem;
         margin-left: auto;
+        cursor: pointer;
 
         p {
             font-weight: 700;
+            color: ${({theme}) => theme.txtClr1};
         }
-    }
-
-    h1 {
-        font-size: 1.625rem;
-        font-weight: 700;
-        margin-right: auto;
-    }
-
-
-
-
 `

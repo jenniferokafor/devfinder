@@ -6,6 +6,7 @@ export const lightTheme = {
     btnTxtClr: '#0079FF',
     txtClr4: '#697C9A',
     txtClr5: '#FFF',
+    shadow: '0px 16px 30px -10px rgba(70, 96, 187, 0.198567)',
 }
 
 export const darkTheme = {
@@ -16,4 +17,15 @@ export const darkTheme = {
     btnTxtClr: '#0079FF',
     txtClr4: '#FFF',
     txtClr5: '#FFF',
+    shadow: 'none',
 }
+
+// light theme colors
+// bgClr is light blue
+// txtClr1 is grey
+// txtClr2 is black
+
+// dark theme colors
+// bgClr is dark blue
+// txtClr 1 is white
+// txtClr 2 is white
