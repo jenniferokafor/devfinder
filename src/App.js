@@ -49,7 +49,7 @@ function App() {
         <Container>
 
           <StyledHeader>
-          <h1>devfinder</h1>
+            <h1>devfinder</h1>
             <ToggleBar />
           </StyledHeader>
 
