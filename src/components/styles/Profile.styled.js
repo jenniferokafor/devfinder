@@ -65,6 +65,7 @@ export const StyledSearch = styled.div`
         color: ${({theme}) => theme.txtClr5};
         margin-left: auto;
         font-family: 'Space Mono', monospace;
+        cursor: pointer;
 
         &:hover {
             opacity: 75%;
