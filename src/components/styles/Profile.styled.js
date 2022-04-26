@@ -43,6 +43,7 @@ export const StyledSearch = styled.div`
 
         &:focus {
             outline: none;
+            background-color: ${({theme}) => theme.cardClr};
         }
 
         @media only screen and (max-width: 47.938rem) {
@@ -256,10 +257,6 @@ export const StyledSocial = styled.div`
 
         a:hover {
             text-decoration: underline;
-        }
-
-        &:nth-child(3) {
-            opacity: 50%;
         }
     }
 

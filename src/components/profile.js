@@ -5,6 +5,8 @@ import pin from '../assets/icons/003-pin.svg';
 import urlIcon from '../assets/icons/002-url.svg';
 import twitter from '../assets/icons/004-twitter.svg';
 import office from '../assets/icons/001-office-building.svg';
+import styledComponents from 'styled-components';
+import theme from '../App'
 
 export default function Profile () {
 
@@ -33,6 +35,9 @@ export default function Profile () {
         twitter: '',
         company: ''
     });
+
+    // string to be used to replace userData object values when ''  or null is returned
+    const [nullDataValue, setNullDataValue] = useState('Not available')
 
     //function to handle change in input from page form
     function handleChange (event) {
@@ -84,10 +89,46 @@ export default function Profile () {
     let prevDate = new Date(userData.createdDate)
     let newDate = prevDate.toDateString();
 
+    // this is messy. Will revisit. If/else statements to return "Not available" message for empty data returns
+    function nullValueText () {
+        if (userData.location === '' || userData.location === null) {
+            setUserData(prevUserData => {
+            return {
+                ...prevUserData,
+                location: nullDataValue
+            }
+            })
+        } else if (userData.blog === '' || userData.blog === null) {
+            setUserData(prevUserData => {
+            return {
+                ...prevUserData,
+                blog: nullDataValue
+            }
+            })
+        } else if (userData.twitter === '' || userData.twitter === null) {
+            setUserData(prevUserData => {
+            return {
+                ...prevUserData,
+                twitter: nullDataValue
+            }
+            })
+        } else if (userData.company === '' || userData.company === null) {
+            setUserData(prevUserData => {
+            return {
+                ...prevUserData,
+                company: nullDataValue
+            }
+            })
+        }
+    }
+
+
     // function to generate a name value for the API when the submit button is clicked
     function handleClick () {
             setApiNameValue(apiNameValue = user.username)
     }
+
+    nullValueText ();
 
     // RETURN STATEMENT
 
@@ -134,22 +175,22 @@ export default function Profile () {
                 {/* social icons */}
 
                 <StyledSocial>
-                    <div>
+                    <div style={{opacity: userData.location === nullDataValue ? '50%' : '100%'}}>
                         <img src={pin} alt='location icon'/>
                         <p>{userData.location}</p>
                     </div>
 
-                    <div>
+                    <div style={{opacity: userData.blog === nullDataValue ? '50%' : '100%'}}>
                         <img src={urlIcon} alt='link icon'/>
                         <a href={userData.blog} target='_blank'>{userData.blog}</a>
                     </div>
 
-                    <div>
+                    <div style={{opacity: userData.twitter === nullDataValue ? '50%' : '100%'}}>
                         <img src={twitter} alt='twitter icon'/>
                         <p>{userData.twitter}</p>
                     </div>
 
-                    <div>
+                <div style={{opacity: userData.company === nullDataValue ? '50%' : '100%'}}>
                         <img src={office} alt='place of work icon'/>
                         <p>{userData.company}</p>
                     </div>
