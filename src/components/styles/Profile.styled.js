@@ -45,6 +45,10 @@ export const StyledSearch = styled.div`
             outline: none;
         }
 
+        @media only screen and (max-width: 47.938rem) {
+            font-size: 0.813rem !important;
+        }
+
         @media screen and (min-width: 64rem) {
             &, &::placeholder {
                 min-width: 17rem;
