@@ -35,6 +35,8 @@ export const StyledSearch = styled.div`
         background-color: ${({theme}) => theme.cardClr};
         color: ${({theme}) => theme.txtClr1};
         caret-color: ${({theme}) => theme.btnTxtClr};
+        box-sizing: border-box;
+        width: 100%;
 
         &::placeholder {
             color: ${({theme}) => theme.txtClr1};
