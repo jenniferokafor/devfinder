@@ -38,7 +38,7 @@ function App() {
   }
 
   // values to be passed to the toggle bar 
-  let toggleText = theme === 'light' ? "LIGHT" : "DARK";
+  let toggleText = theme === 'light' ? "DARK" : "LIGHT";
   let toggleIcon = theme === 'light' ? <Moon /> : <Sun />;
 
 

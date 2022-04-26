@@ -6,22 +6,24 @@ export const StyledSearch = styled.div`
     align-items: center;
     gap: 0.438rem;
     height: 3.75rem;
-    margin: 0 1.5rem 1rem 1.5rem;
+    margin: 0 1.5rem 1rem 0;
     border-radius: 15px;
     padding-left: 1rem;
     padding-right: 0.438rem;
     background-color: ${({theme}) => theme.cardClr};
     box-shadow: ${({theme}) =>theme.shadow};
-    max-width: 20.438rem;
+    width: 20.438rem;
 
     @media (min-width: 46rem) {
         gap: 1.5rem;
+        padding-right: 1.2rem;
         margin-bottom: 1.5rem;
-        max-width: 35.813rem;
+        width: 35.813rem;
     }
 
     @media (min-width: 64rem) {
-        max-width: 45.625rem;
+        padding-right: 0.5rem;
+        width: 45.625rem;
 
     }
 
@@ -42,6 +44,10 @@ export const StyledSearch = styled.div`
             outline: none;
         }
 
+        @media only screen and (max-width: 47.938rem) {
+            font-size: 0.813rem;
+        }
+
         @media screen and (min-width: 64rem) {
             &, &::placeholder {
                 min-width: 17rem;
@@ -51,9 +57,10 @@ export const StyledSearch = styled.div`
     }
 
     p {
+        text-align: center;
         margin-left: auto;
         color: red;
-        display: none;
+        
     }
 
     button {
@@ -78,85 +85,110 @@ export const StyledProfileCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 0 1.5rem 1rem 1.5rem;
+    /* margin: 0 1.5rem 1rem 1.5rem; */
     padding: 2rem 1.5rem 3rem 1.5rem;
     background-color: ${({theme}) => theme.cardClr};
     box-shadow: ${({theme}) =>theme.shadow};
     border-radius: 15px;
-    max-width: 19rem;
+    width: 19rem;
+
+    @media (max-width: 21.875rem) {
+        width: 26rem;
+    }
 
     @media (min-width: 46rem) {
-        max-width: 30rem;
+        width: 35rem;
     }
 
     @media (min-width: 64rem) {
-        max-width: 43rem;
-        padding-left: 12.625rem;
+        width: 33.625rem;
+        padding-left: 12rem;
     }
 `
 
 export const StyledPersonDetails = styled.div`
-    display: grid;
-    grid: repeat(2, auto) / 4.375rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.063rem;
     color: ${({theme}) => theme.txtClr1};
     position: relative;
 
-    img {
-        width: 4.375rem;
-        height: 4.375rem;
-
-        @media (min-width: 64rem) {
-            margin-left: -95px;
-        }
-    }
-
-    div {
-        margin: .45rem 0 2.063rem 1.188rem;
+    .img-text-wrapper {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.188rem;
 
-        @media (min-width: 64rem) {
-            margin-left: -70px;
-            margin-bottom: 1rem;
+        img {
+            width: 4.375rem;
+            height: 4.375rem;
+            border-radius: 50%;
         }
 
-        h3 {
+        div {
+            
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+
+            h3 {
             font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 6px;
             color: ${({theme}) => theme.txtClr2};
 
-            @media (min-width: 64rem) {
-                font-size: 1.625rem;
+                @media only screen and (min-width: 48rem) {
+                    font-size: 1.625rem;
+                }
+            }
+
+            h4 {
+                font-size: 0.813rem;
+                color: ${({theme}) => theme.btnTxtClr};
+            }
+
+        }
+
+        @media only screen and (min-width: 48rem) {
+            gap: 2.563rem;
+
+            img {
+                width: 7.313rem;
+                height: 7.313rem;
             }
         }
 
-        h4 {
-            font-size: 0.813rem;
-            margin-bottom: 9px;
-            color: ${({theme}) => theme.btnTxtClr};
+        @media only screen and (min-width: 64rem) {
+                align-items: flex-start;
+                padding-top: 1.25rem;
 
-            @media (min-width: 64rem) {
-                font-size: 1rem;
-            }
-        }
+                img {
+                    position: absolute;
+                    left: -150px;
+                }
 
-        p {
-            @media (min-width: 64rem) {
-                position: absolute;
-                right: 10px;
-                font-size: 0.938rem;
+                div {
+                    
+
+                    h4 {
+                        font-size: 1rem;
+                    }
+
+                    p {
+                        position: absolute;
+                        right: 15px;
+                    }
+                }
             }
-        }
     }
 
     p {
-        grid-area: 2/1/-1/-1;
         line-height: 1.563rem;
+    }
+
+    @media only screen and (min-width: 64rem) {
+        gap: 1.25rem;
+
         
-        @media (min-width: 64rem) {
-            max-width: 30rem;
-        }
     }
 `
 
@@ -171,8 +203,10 @@ export const StyledPersonStats = styled.div`
     border-radius: 15px;
     background-color: ${({theme}) => theme.bgClr};
 
-    @media (min-width: 46rem) {
-        gap: 7rem;
+    @media only screen and (min-width: 46rem) {
+        padding-left: 2rem;
+        justify-content: start;
+        gap: 6.188rem;
     }
 
     div {
@@ -190,6 +224,14 @@ export const StyledPersonStats = styled.div`
         span {
             font-size: 1rem;
             font-weight: 700;
+        }
+
+        @media only screen and (min-width: 46rem) {
+            align-items: flex-start;
+
+            span {
+                font-size: 1.375rem;
+            }
         }
     }
 `
@@ -220,7 +262,7 @@ export const StyledSocial = styled.div`
         }
     }
 
-    @media (min-width: 46rem) {
+    @media only screen and (min-width: 46rem) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
