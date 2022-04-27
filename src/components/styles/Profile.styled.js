@@ -14,14 +14,14 @@ export const StyledSearch = styled.div`
     box-shadow: ${({theme}) =>theme.shadow};
     width: 20.438rem;
 
-    @media (min-width: 46rem) {
+    @media only screen and (min-width: 46rem) {
         gap: 1.5rem;
         padding-right: 1.2rem;
         margin-bottom: 1.5rem;
         width: 35.813rem;
     }
 
-    @media (min-width: 64rem) {
+    @media only screen and (min-width: 64rem) {
         padding-right: 0.5rem;
         width: 45.625rem;
 
@@ -46,15 +46,17 @@ export const StyledSearch = styled.div`
             background-color: ${({theme}) => theme.cardClr};
         }
 
-        @media only screen and (max-width: 47.938rem) {
-            font-size: 0.813rem !important;
-        }
-
         @media screen and (min-width: 64rem) {
             &, &::placeholder {
                 min-width: 17rem;
                 font-size: 1.125rem;
             }
+        }
+    }
+
+    @media only screen and (max-width: 47.938rem) {
+        input, select, textarea {
+            font-size: 16px !important;
         }
     }
 
