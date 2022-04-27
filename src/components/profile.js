@@ -139,8 +139,12 @@ export default function Profile () {
             
             <StyledSearch>
                 <Glass />
-                <input type='text' name='username' placeholder='Search Github username...' 
+
+                
+                <input type='text' name='username' placeholder='GitHub username...' 
                 onChange={handleChange} value={user.username}/>
+                
+
                 {errorMsg && <p>No results</p>}
                 
                 <button type='submit'  onClick={handleClick}>Search</button>

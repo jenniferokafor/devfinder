@@ -28,7 +28,7 @@ export const StyledSearch = styled.div`
     }
 
     input {
-        min-width: 11.5rem;
+        width: 11.5rem;
         min-height: 1.563rem;
         font-family: 'Space Mono', monospace;
         border: none;
@@ -46,7 +46,13 @@ export const StyledSearch = styled.div`
             background-color: ${({theme}) => theme.cardClr};
         }
 
-        @media screen and (min-width: 64rem) {
+        @media only screen and (min-width: 48rem) {
+            width: 18rem;
+        }
+
+        @media only screen and (min-width: 64rem) {
+            width: 28rem;
+
             &, &::placeholder {
                 min-width: 17rem;
                 font-size: 1.125rem;
@@ -56,7 +62,7 @@ export const StyledSearch = styled.div`
 
     @media only screen and (max-width: 47.938rem) {
         input, select, textarea {
-            font-size: 16px !important;
+            font-size: 16px;
         }
     }
 
