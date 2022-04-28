@@ -160,7 +160,7 @@ export default function Profile () {
 
                         <div>
                             <h3>{userData.name}</h3>
-                            <h4>@{userData.login}</h4>
+                            <h4><a href={"https://github.com/" + userData.login}>@{userData.login}</a></h4>
                             <p>Joined {newDate}</p>
                         </div>
                     </div>
@@ -191,7 +191,7 @@ export default function Profile () {
 
                     <div style={{opacity: userData.twitter === nullDataValue ? '50%' : '100%'}}>
                         <img src={twitter} alt='twitter icon'/>
-                        <p>{userData.twitter}</p>
+                        <p><a href={"https://twitter.com/" + userData.twitter}>{userData.twitter}</a></p>
                     </div>
 
                 <div style={{opacity: userData.company === nullDataValue ? '50%' : '100%'}}>
